@@ -2,111 +2,149 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
     <title>Chilaquiles</title>
-    <link rel="stylesheet" type="text/css" href="css/mis_estilos.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/mis_estilos.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 </head>
 <style>
     body {
-        color: darkslategrey;
+        color: rgb(255, 255, 255);
         margin-left: 100px;
     }
 </style>
 
 <body>
-    <header>
-        <h1 id="titulo">Chilaquiles</h1>
-    </header>
-    <nav>
-        <ul>
-            <li>Chilaquiles <span class="verde">verdes</span></li>
-            <li>Chilaquiles <span style="color:red">rojos</span></li>
-        </ul>
-    </nav>
-    <main>
-        <p>
-            <strong>¡hola mundo!</strong>
-            Los <span>chilaquiles</span> son <em>deliciosos</em>.
-        </p>
-        <table>
-            <tbody>
-                <tr>
-                    <td>Con salsa verde</td>
-                    <td>Con salsa de chipotle</td>
-                </tr>
-                <tr>
-                    <td>Crema, queso y aguacate</td>
-                    <td>Crema, queso y aguacate</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <td>Nuestros mejores chilaquiles</td>
-            </tfoot>
-            <thead>
-                <tr>
-                    <th>Chilaquiles verdes</th>
-                    <th>Chilaquiles rojos</th>
-                </tr>
-            </thead>
-        </table>
-        <h2>Laboratorio 1: Preguntas a responder</h2>
+    <section class="section">
+        <div class="container, content is-large">
+            <header>
+                <h1 id="titulo" class="title">Chilaquiles</h1>
+            </header>
+            <nav>
+                <ul>
+                    <li>Chilaquiles <span class="verde">verdes</span></li>
+                    <li>Chilaquiles <span style="color:red">rojos</span></li>
+                </ul>
+            </nav>
+            <main>
+                <p class="block">
+                <div class="block">
+                    <strong class="has-text-primary">¡hola mundo!</strong>
+                </div>
+                <div class="block">
+                    Los <span>chilaquiles</span> son <em>deliciosos</em>.
+                </div>
+                </p>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>Con salsa verde</td>
+                            <td>Con salsa de chipotle</td>
+                        </tr>
+                        <tr>
+                            <td>Crema, queso y aguacate</td>
+                            <td>Crema, queso y aguacate</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <td>Nuestros mejores chilaquiles</td>
+                    </tfoot>
+                    <thead>
+                        <tr>
+                            <th>Chilaquiles verdes</th>
+                            <th>Chilaquiles rojos</th>
+                        </tr>
+                    </thead>
+                </table>
+                <button id="preparar" class="button is-light">preparar orden</button>
 
-        <h3>Diferencia entre Internet y la World Wide Web</h3>
-        <p>El internet es la red global de computadoras interconectadas que permite el
-            intercambio de datos y comunicacion a traves de diversos protocolos. <br>
-            La World Wide Web es un sistema de información que utiliza Internet para
-            acceder y compartir documentos y recursos a través de navegadores web,
-            utilizando el protocolo HTTP. <br>
-            Podriamos decir que la diferencia entre estos conceptos es parecida a la
-            diferencia entre una carretera y los autos que la recorren. Siendo internet
-            la carretera y WWW el conjunto de páginas y servicios que viajan sobre esa carretera</p>
+                <!--PROBLEMA 6-->
 
-        <h3>Cuales son las partes de un URL?</h3>
-        <ol>
-            <li>Esquema: Indica el protocolo (ej. http, https).</li>
-            <li>Dominio: Nombre del sitio o dirección IP (ej. www.example.com).</li>
-            <li>Puerto (opcional): Especifica el puerto del servidor (ej. :80).</li>
-            <li>Ruta: La dirección del recurso en el servidor (ej. /path/to/page).</li>
-            <li>Consulta (opcional): Parámetros enviados al servidor (ej. ?id=123).</li>
-            <li>Fragmento (opcional): Navegación dentro de la página (ej. #section1).</li>
-        </ol>
+                <h2 class="">Lista de Tareas Pendientes</h2>
 
-        <h3>Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</h3>
-        <ol>
-            <li>GET: Solicita un recurso sin modificarlo.</li>
-            <li>HEAD: Similar a GET, pero solo obtiene los encabezados de la respuesta.</li>
-            <li>POST: Envía datos al servidor para crear un recurso.</li>
-            <li>PUT: Envía datos al servidor para actualizar o crear un recurso.</li>
-            <li>PATCH: Modifica parcialmente un recurso existente.</li>
-            <li>DELETE: Elimina un recurso en el servidor.</li>
-        </ol>
+                <div class="box">
+                    <!-- Formulario para añadir nuevas tareas -->
+                    <input type="text" id="nuevaTarea" placeholder="Nueva tarea">
+                    <input type="number" id="tiempoEstimado" placeholder="Tiempo estimado (min)">
+                    <button class="button is-light" onclick="agregarTarea()">Agregar Tarea</button>
 
-        <h3>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y
-            contraseña en algún sitio? ¿Por qué?</h3>
-        <p>POST: Se usa porque envía los datos de manera segura y permite enviar datos de gran tamaño, además de no
-            mostrar los datos en la URL.</p>
-
-        <h3>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?
-        </h3>
-        <p>GET: Se utiliza para solicitar y obtener el contenido de la página.</p>
-
-        <h3>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</h3>
-        <p>Significa que la solicitud fue exitosa y el servidor devolvió el recurso solicitado. No ocurrió ningún error.
-        </p>
-
-        <h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al
-            sitio y se encontró con un error 404? ¿Por qué?</h3>
-        <p>Depende, el error 404 indica que el recurso solicitado no fue encontrado. Si el recurso debería existir, es
-            responsabilidad del desarrollador corregirlo.
-            Si no, puede ser que el usuario haya introducido una URL incorrecta</p>
-
-        <h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al
-            sitio y se encontró con un error 500? ¿Por qué?</h3>
-        <p>Sí, el error 500 indica un problema interno del servidor, lo que sugiere un problema en el código o en la
-            configuración del servidor que el desarrollador
-            debe solucionar</p>
-    </main>
-    <footer></footer>
-    <script src="js/introjs.js"></script>
+                    <!-- Tabla donde se mostrarán las tareas -->
+                    <table border="1" id="tablaTareas">
+                        <thead>
+                            <tr>
+                                <th>Tarea</th>
+                                <th>Tiempo Estimado (min)</th>
+                                <th>Cronómetro</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+            <footer></footer>
+            <script src="js/introjs.js"></script>
+        </div>
+    </section>
 </body>
 
 </html>
+
+<!-- <h2>Laboratorio 1: Preguntas a responder</h2>
+
+            <h3>Diferencia entre Internet y la World Wide Web</h3>
+            <p>El internet es la red global de computadoras interconectadas que permite el
+                intercambio de datos y comunicacion a traves de diversos protocolos. <br>
+                La World Wide Web es un sistema de información que utiliza Internet para
+                acceder y compartir documentos y recursos a través de navegadores web,
+                utilizando el protocolo HTTP. <br>
+                Podriamos decir que la diferencia entre estos conceptos es parecida a la
+                diferencia entre una carretera y los autos que la recorren. Siendo internet
+                la carretera y WWW el conjunto de páginas y servicios que viajan sobre esa carretera</p>
+
+            <h3>Cuales son las partes de un URL?</h3>
+            <ol>
+                <li>Esquema: Indica el protocolo (ej. http, https).</li>
+                <li>Dominio: Nombre del sitio o dirección IP (ej. www.example.com).</li>
+                <li>Puerto (opcional): Especifica el puerto del servidor (ej. :80).</li>
+                <li>Ruta: La dirección del recurso en el servidor (ej. /path/to/page).</li>
+                <li>Consulta (opcional): Parámetros enviados al servidor (ej. ?id=123).</li>
+                <li>Fragmento (opcional): Navegación dentro de la página (ej. #section1).</li>
+            </ol>
+
+            <h3>Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</h3>
+            <ol>
+                <li>GET: Solicita un recurso sin modificarlo.</li>
+                <li>HEAD: Similar a GET, pero solo obtiene los encabezados de la respuesta.</li>
+                <li>POST: Envía datos al servidor para crear un recurso.</li>
+                <li>PUT: Envía datos al servidor para actualizar o crear un recurso.</li>
+                <li>PATCH: Modifica parcialmente un recurso existente.</li>
+                <li>DELETE: Elimina un recurso en el servidor.</li>
+            </ol>
+
+            <h3>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y
+                contraseña en algún sitio? ¿Por qué?</h3>
+            <p>POST: Se usa porque envía los datos de manera segura y permite enviar datos de gran tamaño, además de no
+                mostrar los datos en la URL.</p>
+
+            <h3>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?
+            </h3>
+            <p>GET: Se utiliza para solicitar y obtener el contenido de la página.</p>
+
+            <h3>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</h3>
+            <p>Significa que la solicitud fue exitosa y el servidor devolvió el recurso solicitado. No ocurrió ningún error.
+            </p>
+
+            <h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al
+                sitio y se encontró con un error 404? ¿Por qué?</h3>
+            <p>Depende, el error 404 indica que el recurso solicitado no fue encontrado. Si el recurso debería existir, es
+                responsabilidad del desarrollador corregirlo.
+                Si no, puede ser que el usuario haya introducido una URL incorrecta</p>
+
+            <h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al
+                sitio y se encontró con un error 500? ¿Por qué?</h3>
+            <p>Sí, el error 500 indica un problema interno del servidor, lo que sugiere un problema en el código o en la
+                configuración del servidor que el desarrollador
+                debe solucionar</p> -->
